@@ -22,8 +22,10 @@
 			});
 
 			$(document).on('click', '#card ', function() {
+				$('.newDiv h3, .newDiv p').hide()
 				$('.newDiv').append('<p>' + $('form .three').val() + '</p>');
 			});
+			
 
 		});
 
