@@ -6,17 +6,23 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(document).on('click', '#button', function() {
-				$('#card').append('<div class="newDiv" ><h3>' + $('.one').val() + ' ' + $('.two').val() + '</h3>' + '<p>' + $('.three').val() + '</p></div>');
+				/*$('#card').append('<div class="newDiv" ><h3>' + $('.one').val() + ' ' + $('.two').val() + '</h3>' + '<p>' + $('.three').val() + '</p></div>');*/
+				$('#card').append('<div class="newDiv" ><h3>' + $('.one').val() + ' ' + $('.two').val() + '</h3>' + '<p>Click me to see Description...</p>');
 
-				$('#card .newDiv').css({'padding': '3px', 'background': 'linear-gradient(to top, black, white, black)', 'vertical-align': 'top', 'margin': '5px'});
+				$('#card .newDiv').css({'padding': '3px', 'background': 'linear-gradient(to top, black, white, black)', 'vertical-align': 'top', 'margin': '5px', 'height': '125px'});
 				
-				$('.newDiv p').css({'width': '280px', 'display': 'inline-block'});
+				$('.newDiv p').css({'width': '270px', 'display': 'inline-block', 'margin': '2px'});
 
 				return false;
 
 			});
+
 			$(document).on('click', 'button', function() {
 				$('.newDiv').hide();
+			});
+
+			$(document).on('click', '#card ', function() {
+				$('.newDiv').append('<p>' + $('form .three').val() + '</p>');
 			});
 
 		});
@@ -40,6 +46,7 @@
 		}
 		h3,h4 {
 			display: inline-block;
+			margin: 3px auto;
 		}
 		header {
 			display: block;
@@ -54,7 +61,7 @@
 			display: block;
 			margin: 5px;
 		}
-		#button {
+		#button, button {
 			padding: 5px;
 			background-color: red;
 			color: white;
@@ -75,18 +82,11 @@
 			margin: 5px 0px auto 200px;
 		}
 		.three {
-			padding: 50px;
-			text-align: top;
-		}
-		button {
 			padding: 5px;
-			background-color: red;
-			color: white;
-			width: 75px;
-			border: 2px solid black;
-			border-radius: 15px;
-			margin: 10px auto;
-			
+			text-align: top;
+			height: 100px;
+			width: 175px;
+		}
 		}
 	</style>
 
@@ -100,7 +100,7 @@
 		<form>
 			First Name: <input type="text" name="first_name" class="one">
 			Last Name: <input type="text" name="last_name" class="two">
-			Description: <input type="text" name="last_name" class="three">
+			Description: <textarea class="three"></textarea>
 			<input id="button" type="submit" name="submit1">
 			<button>RESET</button>
 		</form>
@@ -112,3 +112,5 @@
 	</div>
 </body>
 </html>
+
+<!--store description as variable and append it when clicked.--> 
