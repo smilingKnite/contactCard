@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Card</title>
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(document).on('click', '#button', function() {
+				$('#card').append('<div class="newDiv" ><h3>' + $('.one').val() + ' ' + $('.two').val() + '</h3>' + '<p>' + $('.three').val() + '</p></div>');
+
+				$('#card .newDiv').css({'padding': '3px', 'background': 'linear-gradient(to top, black, white, black)', 'vertical-align': 'top', 'margin': '5px'});
+				
+				$('.newDiv p').css({'width': '280px', 'display': 'inline-block'});
+
+				return false;
+
+			});
+			$(document).on('click', 'button', function() {
+				$('.newDiv').hide();
+			});
+
+		});
+
+
+	</script>
+
+	<style type="text/css">
+		body {
+			background-color: black;
+			width: 1000px;
+			height: 100%;
+		}
+		#wrapper {
+			background: linear-gradient(to top, black, white);
+			width: 800px;
+			padding: 10px;
+			margin: 10px auto;
+			display: block;
+			border-radius: 10px;
+		}
+		h3,h4 {
+			display: inline-block;
+		}
+		header {
+			display: block;
+			
+			text-align: center;
+		}
+		form {
+			display: inline-block;
+			vertical-align: top;
+		}
+		form input {
+			display: block;
+			margin: 5px;
+		}
+		#button {
+			padding: 5px;
+			background-color: red;
+			color: white;
+			width: 75px;
+			border: 2px solid black;
+			border-radius: 15px;
+			margin: 10px auto;
+		}
+		textarea {
+			display: block;
+			margin: 5px;
+			padding: 10px;
+		}
+		#card {
+			display: inline-block;
+			background-color: silver;
+			width: 300px;
+			margin: 5px 0px auto 200px;
+		}
+		.three {
+			padding: 50px;
+			text-align: top;
+		}
+		button {
+			padding: 5px;
+			background-color: red;
+			color: white;
+			width: 75px;
+			border: 2px solid black;
+			border-radius: 15px;
+			margin: 10px auto;
+			
+		}
+	</style>
+
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<h1>Contact Card</h1>
+		</header>
+
+		<form>
+			First Name: <input type="text" name="first_name" class="one">
+			Last Name: <input type="text" name="last_name" class="two">
+			Description: <input type="text" name="last_name" class="three">
+			<input id="button" type="submit" name="submit1">
+			<button>RESET</button>
+		</form>
+		
+		<div id="card">
+			
+		</div>
+		
+	</div>
+</body>
+</html>
